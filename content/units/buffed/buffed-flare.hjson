@@ -24,9 +24,12 @@ parts:[
     y: 1
     rotation: 18
     progress: {
-      type: warmup
+      type: {
+       type: reload
+       op: inv
+      }
       op: blend
-      other: reload
+      other: warmup
       amount: 1
     }
     moveRot: 45
