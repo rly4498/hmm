@@ -27,7 +27,7 @@ parts:[
       type: warmup
       op: blend
       other: reload
-      amount: 0.4
+      amount: 1
     }
     moveRot: 45
     moveX: -8
