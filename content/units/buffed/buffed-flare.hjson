@@ -1,0 +1,56 @@
+speed: 3.1
+accel: 0.28
+drag: 0.02
+flying: true
+health: 720
+armor: 9.5
+engineOffset: 5.75
+hitSize: 12.5
+itemCapacity: 10
+targetFlags: [
+  turret,
+  factory,
+  generator,
+  reactor,
+  storage
+]
+parts:[
+  {
+    suffix: -arm
+    type: RegionPart
+    mirror: false
+    layerOffset: -0.1
+    x: -7
+    y: 1
+    rotation: 18
+    progress: {
+      type: warmup
+      op: blend
+      other: reload
+      amount: 0.4
+    }
+    moveRot: 45
+    moveX: -8
+    moveY: 2
+  }
+]
+weapons: [
+  {
+    name: test1
+    y: 0
+    x: 2 
+    reload: 20
+    ejectEffect: casing1
+    bullet: {
+      speed: 2.5
+      damage: 9
+      width: 7
+      height: 9
+      lifetime: 45
+      shootEffect: shootSmall
+      smokeEffect: shootSmallSmoke
+      ammoMultiplier: 2
+    }
+    shootSound: pew
+  }
+]
