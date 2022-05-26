@@ -16,7 +16,7 @@ targetFlags: [
 ]
 parts:[
   {
-    suffix: -arm
+    suffix: -arm1
     type: RegionPart
     mirror: false
     layerOffset: -0.1
@@ -24,10 +24,7 @@ parts:[
     y: 1
     rotation: 18
     progress: {
-      type: {
-       type: reload
-       op: inv
-      }
+      type: reload
       op: blend
       other: warmup
       amount: 1
