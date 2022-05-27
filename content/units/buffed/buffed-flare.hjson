@@ -14,24 +14,50 @@ targetFlags: [
   reactor,
   storage
 ]
-parts:[
+parts: [
   {
-    suffix: -arm1
     type: RegionPart
+    suffix: -arm-left1
     mirror: false
-    layerOffset: -0.1
-    x: -7
-    y: 1
-    rotation: 18
+    layerOffset: -0.001
+    x: -11
+    y: 4
+    rotation: 20
+    moveX: 3.5
+    moveY: 4
+    moveRot: -80
     progress: {
       type: reload
       op: blend
-      other: warmup
-      amount: 1
+      other: {
+        type: warmup
+        op: inv
+      }
+      amount: 0.4
     }
-    moveRot: 45
-    moveX: -8
-    moveY: 2
+    children: [
+      {
+        type: RegionPart
+        suffix: -arm-left2
+        mirror: false
+        layerOffset: -0.001
+        //x: -12
+        y: -0.5
+        //rotation: 18
+        //moveX: 3
+        //moveY: -2.5
+        moveRot: 10
+        progress: {
+          type: reload
+          op: blend
+          other: {
+            type: warmup
+            op: inv
+          }
+          amount: 0.2
+        }
+      }
+    ]
   }
 ]
 weapons: [
