@@ -17,15 +17,15 @@ targetFlags: [
 parts: [
   {
     type: RegionPart
-    suffix: -arm-left1
+    suffix: -left-arm1
     mirror: false
-    layerOffset: -0.001
-    x: -11
-    y: 4
+    layerOffset: -0.0001
+    x: -10.5
+    y: 5
     rotation: 20
-    moveX: 3.5
-    moveY: 4
-    moveRot: -80
+    moveX: 6
+    moveY: -0.8
+    moveRot: -120
     progress: {
       type: reload
       op: blend
@@ -33,20 +33,20 @@ parts: [
         type: warmup
         op: inv
       }
-      amount: 0.4
+      amount: 0.3
     }
     children: [
       {
         type: RegionPart
-        suffix: -arm-left2
+        suffix: -left-arm2
         mirror: false
-        layerOffset: -0.001
-        //x: -12
-        y: -0.5
-        //rotation: 18
-        //moveX: 3
-        //moveY: -2.5
-        moveRot: 10
+        layerOffset: -0.0002
+        x: -0.4
+        y: -1.4
+        rotation: -18
+        moveX: -0.4
+        moveY: 6
+        moveRot: 125
         progress: {
           type: reload
           op: blend
@@ -54,8 +54,30 @@ parts: [
             type: warmup
             op: inv
           }
-          amount: 0.2
+          amount: 0.4
         }
+        children: [
+          {
+            type: RegionPart
+            suffix: -left-fist
+            layerOffset: -0.0003
+            x: 3.4
+            y: 10.8
+            rotation: -10
+            //moveX: -0.4
+            //moveY: 6
+            //moveRot: 125
+            /*progress: {
+              type: reload
+              op: blend
+              other: {
+                type: warmup
+                op: inv
+              }
+              amount: 0.4
+            }*/
+          }
+        ]
       }
     ]
   }
