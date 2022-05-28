@@ -23,8 +23,22 @@ parts: [
     x: -10.5
     y: 5
     rotation: 20
+    /*moves: [
+      {
+        progress: warmup
+        moveX: 1
+        moveY: -2
+        moveRot: 30
+      }
+      {
+        progress: reload
+        moveX: 6
+        moveY: 1
+        moveRot: -150
+      }
+    ]*/
     moveX: 6
-    moveY: -0.8
+    moveY: -1
     moveRot: -120
     progress: {
       type: reload
@@ -33,7 +47,7 @@ parts: [
         type: warmup
         op: inv
       }
-      amount: 0.3
+      amount: 0.2
     }
     children: [
       {
@@ -41,12 +55,11 @@ parts: [
         suffix: -left-arm2
         mirror: false
         layerOffset: -0.0002
-        x: -0.4
-        y: -1.4
-        rotation: -18
-        moveX: -0.4
-        moveY: 6
-        moveRot: 125
+        y: -1
+        rotation: -14
+        moveX: -0.8
+        moveY: 7.5
+        moveRot: 120
         progress: {
           type: reload
           op: blend
@@ -54,7 +67,7 @@ parts: [
             type: warmup
             op: inv
           }
-          amount: 0.4
+          amount: 0.2
         }
         children: [
           {
@@ -64,10 +77,8 @@ parts: [
             x: 3.4
             y: 10.8
             rotation: -10
-            //moveX: -0.4
-            //moveY: 6
-            //moveRot: 125
-            /*progress: {
+            moveRot: -20
+            progress: {
               type: reload
               op: blend
               other: {
@@ -75,7 +86,7 @@ parts: [
                 op: inv
               }
               amount: 0.4
-            }*/
+            }
           }
         ]
       }
