@@ -17,26 +17,15 @@ targetFlags: [
 parts: [
   {
     type: RegionPart
-    suffix: -left-arm1
     mirror: false
     layerOffset: -0.0001
+    weaponIndex: 0
+    suffix: -left-arm1
+    //
     x: -10.5
     y: 5
     rotation: 20
-    /*moves: [
-      {
-        progress: warmup
-        moveX: 1
-        moveY: -2
-        moveRot: 30
-      }
-      {
-        progress: reload
-        moveX: 6
-        moveY: 1
-        moveRot: -150
-      }
-    ]*/
+    //---
     moveX: 6
     moveY: -1
     moveRot: -120
@@ -47,16 +36,18 @@ parts: [
         type: warmup
         op: inv
       }
-      amount: 0.2
+      amount: 0.3
     }
+    //
     children: [
       {
         type: RegionPart
-        suffix: -left-arm2
-        mirror: false
         layerOffset: -0.0002
+        suffix: -left-arm2
+        //
         y: -1
         rotation: -14
+        //---
         moveX: -0.8
         moveY: 7.5
         moveRot: 120
@@ -67,16 +58,18 @@ parts: [
             type: warmup
             op: inv
           }
-          amount: 0.2
+          amount: 0.3
         }
+        //
         children: [
           {
             type: RegionPart
-            suffix: -left-fist
             layerOffset: -0.0003
+            suffix: -left-fist
             x: 3.4
             y: 10.8
             rotation: -10
+            //---
             moveRot: -20
             progress: {
               type: reload
@@ -85,8 +78,9 @@ parts: [
                 type: warmup
                 op: inv
               }
-              amount: 0.4
+              amount: 0.5
             }
+            //
           }
         ]
       }
@@ -95,11 +89,19 @@ parts: [
 ]
 weapons: [
   {
-    name: test1
-    y: 0
-    x: 2 
+    name: arm-left
+    mirror: false
+    /*not needed, for testing only*/ layerOffset: 11
+    y: -2.5
+    x: -14
+    baseRotation: -10
+    useAmmo: false
+    shootCone: 20
+    //velocityRnd: 5
     reload: 20
-    ejectEffect: casing1
+    ejectEffect: none
+    shootEffect: none
+    shake: 0.7
     bullet: {
       speed: 2.5
       damage: 9
