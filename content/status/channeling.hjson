@@ -1,0 +1,4 @@
+healthMultiplier: 2
+speedMultiplier: 0.005
+dragMultiplier: 1.6
+disarm: true
