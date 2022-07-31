@@ -41,7 +41,6 @@ parts: [
       }
       amount: 0.3
     }
-    heatColor: ffffff00
     //
     
     children: [
@@ -49,6 +48,29 @@ parts: [
         type: RegionPart
         layerOffset: -0.0003
         suffix: -left-arm-base
+      }
+      {
+        type: RegionPart
+        layerOffset: -0.0003
+        mirror: false
+        suffix: -left-arm1-blur
+        outline: false
+        color: ffffff00
+        colorTo: ffffff
+        progress: {
+          type: recoil
+          op: blend
+          other: {
+            type: recoil
+            op: sustain
+            offset: 0
+            grow: 0.4
+            sustain: 0.2
+          }
+          amount: 0.2
+        }
+        x: 2
+        y: 3
       }
       {
         type: RegionPart
@@ -70,10 +92,32 @@ parts: [
           }
           amount: 0.3
         }
-        heatColor: ffffff00
         //
 
         children: [
+           {
+             type: RegionPart
+             layerOffset: -0.0003
+             mirror: false
+             suffix: -left-arm2-blur
+             outline: false
+             color: ffffff00
+             colorTo: ffffff
+             progress: {
+               type: recoil
+               op: blend
+               other: {
+                  type: recoil
+                  op: sustain
+                  offset: 0
+                  grow: 0.4
+                  sustain: 0.2
+                }
+                amount: 0.2
+              }
+             x: 2
+             y: 3
+          }
           //"shoot effect" for the left arm
           {
             type: FlarePart
@@ -146,6 +190,11 @@ parts: [
             rotation: -20
             //---
             moveRot: 40
+            heatProgress: {
+              type: heat
+              op: shorten
+              amount: 0.4
+            }
             progress: {
               type: reload
               op: blend
@@ -153,10 +202,38 @@ parts: [
                 type: warmup
                 op: inv
               }
-              amount: 0.5
+              amount: 0.55
             }
-            heatColor: ffffff00
             //
+
+            children: [
+              {
+                type: RegionPart
+                layerOffset: -0.0001
+                mirror: false
+                suffix: -left-fist-blur
+                outline: false
+                color: ffffff00
+                colorTo: ffffff
+                progress: {
+                  type: recoil
+                  op: blend
+                  other: {
+                    type: recoil
+                    op: sustain
+                    offset: 0
+                    grow: 0.5
+                    sustain: 0.35
+                  }
+                  amount: 0.3
+                }
+                rotation: 20
+                x: 2
+                y: 3
+                moveRot: -65
+                moveY: -1
+              }
+            ]
           }
         ]
       }
@@ -187,7 +264,6 @@ parts: [
       }
       amount: 0.3
     }
-    heatColor: ffffff00
     //
 
     children: [
@@ -195,6 +271,29 @@ parts: [
         type: RegionPart
         layerOffset: -0.0003
         suffix: -right-arm-base
+      }
+      {
+        type: RegionPart
+        layerOffset: -0.0003
+        mirror: false
+        suffix: -right-arm1-blur
+        outline: false
+        color: ffffff00
+        colorTo: ffffff
+        progress: {
+          type: recoil
+          op: blend
+          other: {
+            type: recoil
+            op: sustain
+            offset: 0
+            grow: 0.4
+            sustain: 0.2
+          }
+          amount: 0.2
+        }
+        x: -2
+        y: 3
       }
       {
         type: RegionPart
@@ -216,10 +315,32 @@ parts: [
           }
           amount: 0.3
         }
-        heatColor: ffffff00
         //
 
         children: [
+           {
+             type: RegionPart
+             layerOffset: -0.0003
+             mirror: false
+             suffix: -right-arm2-blur
+             outline: false
+             color: ffffff00
+             colorTo: ffffff
+             progress: {
+               type: recoil
+               op: blend
+               other: {
+                  type: recoil
+                  op: sustain
+                  offset: 0
+                  grow: 0.4
+                  sustain: 0.2
+                }
+                amount: 0.2
+              }
+             x: -2
+             y: 3
+          }
           //"shoot effect" for the right arm
           {
             type: FlarePart
@@ -292,6 +413,11 @@ parts: [
             rotation: 20
             //---
             moveRot: -40
+            heatProgress: {
+              type: heat
+              op: shorten
+              amount: 0.4
+            }
             progress: {
               type: reload
               op: blend
@@ -301,8 +427,36 @@ parts: [
               }
               amount: 0.5
             }
-            heatColor: ffffff00
             //
+
+            children: [
+              {
+                type: RegionPart
+                layerOffset: -0.0001
+                mirror: false
+                suffix: -right-fist-blur
+                outline: false
+                color: ffffff00
+                colorTo: ffffff
+                progress: {
+                  type: recoil
+                  op: blend
+                  other: {
+                    type: recoil
+                    op: sustain
+                    offset: 0
+                    grow: 0.5
+                    sustain: 0.35
+                  }
+                  amount: 0.3
+                }
+                rotation: -20
+                x: -2
+                y: 3
+                moveRot: 65
+                moveY: -1
+              }
+            ]
           }
         ]
       }
@@ -321,6 +475,7 @@ weapons: [
     ejectEffect: none
     parentizeEffects: true
     cooldownTime: 24
+    recoilTime: 9
     bullet: {
       type: ExplosionBulletType
       killShooter: false
@@ -426,7 +581,7 @@ abilities: [
     duration: 218
     //3.53 * 60
     reload: 1800
-    range: 1
+    range: 0.2
     onShoot: true
     parentizeEffects: true
     effectSizeParam: false
@@ -989,7 +1144,7 @@ abilities: [
     //(3.53 + 8) * 60
     reload: 1800
     //1800
-    range: 1
+    range: 0.2
     onShoot: true
   }
 ]
