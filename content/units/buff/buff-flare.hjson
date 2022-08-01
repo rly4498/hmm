@@ -65,7 +65,7 @@ parts: [
             op: sustain
             offset: 0
             grow: 0.4
-            sustain: 0.2
+            sustain: 0.15
           }
           amount: 0.2
         }
@@ -113,7 +113,7 @@ parts: [
                   grow: 0.4
                   sustain: 0.2
                 }
-                amount: 0.2
+                amount: 0.15
               }
              x: 2
              y: 3
@@ -223,9 +223,9 @@ parts: [
                     op: sustain
                     offset: 0
                     grow: 0.5
-                    sustain: 0.35
+                    sustain: 0.3
                   }
-                  amount: 0.3
+                  amount: 0.25
                 }
                 rotation: 20
                 x: 2
@@ -288,7 +288,7 @@ parts: [
             op: sustain
             offset: 0
             grow: 0.4
-            sustain: 0.2
+            sustain: 0.15
           }
           amount: 0.2
         }
@@ -334,7 +334,7 @@ parts: [
                   op: sustain
                   offset: 0
                   grow: 0.4
-                  sustain: 0.2
+                  sustain: 0.15
                 }
                 amount: 0.2
               }
@@ -446,9 +446,9 @@ parts: [
                     op: sustain
                     offset: 0
                     grow: 0.5
-                    sustain: 0.35
+                    sustain: 0.3
                   }
-                  amount: 0.3
+                  amount: 0.25
                 }
                 rotation: -20
                 x: -2
@@ -474,8 +474,8 @@ weapons: [
     reload: 54
     ejectEffect: none
     parentizeEffects: true
-    cooldownTime: 24
-    recoilTime: 9
+    cooldownTime: 30
+    recoilTime: 13
     bullet: {
       type: ExplosionBulletType
       killShooter: false
@@ -1130,6 +1130,40 @@ abilities: [
               offsetY: 9
               randLength: false
               rotWithParent: true
+              length: 0
+            }
+          ]
+        }
+        {
+          type: SeqEffect
+          layer: 114
+          lifetime: 240
+
+          effects: [
+            {
+              type: ParticleEffect
+              layer: 114
+              particles: 1
+              lifetime: 162
+              region: circle-shadow
+              colorFrom: 1d1d2300
+              colorTo: 1d1d23d9
+              sizeFrom: 60
+              sizeTo: 60
+              randLength: false
+              length: 0
+            }
+            {
+              type: ParticleEffect
+              layer: 114
+              particles: 1
+              lifetime: 18
+              region: circle-shadow
+              colorFrom: 1d1d23d9
+              colorTo: 1d1d2300
+              sizeFrom: 60
+              sizeTo: 60
+              randLength: false
               length: 0
             }
           ]
