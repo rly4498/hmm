@@ -1,0 +1,30 @@
+type: Reconstructor
+constructTime: 600
+consumes: {
+  power: 3
+  items: {
+    items: [
+      phase-fabric/18
+    ]
+  }
+  liquid: {
+    liquid: cryofluid
+    amount: 0.2
+  }
+}
+size: 3
+upgrades: [
+  [flare, buff-flare]
+]
+requirements: [
+  copper/200
+  lead/120
+  silicon/90
+]
+research: {
+  parent: additive-reconstructor
+  objectives: [
+    naval-factory
+  ]
+}
+category: units

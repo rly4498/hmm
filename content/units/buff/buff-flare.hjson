@@ -3,7 +3,7 @@ accel: 0.08
 drag: 0.05
 flying: true
 health: 720
-armor: 9.5
+armor: 10
 engineSize: 3
 engineOffset: 5.75
 hitSize: 12.5
@@ -474,7 +474,7 @@ weapons: [
     reload: 54
     ejectEffect: none
     parentizeEffects: true
-    cooldownTime: 30
+    cooldownTime: 24
     recoilTime: 13
     bullet: {
       type: ExplosionBulletType
@@ -1182,3 +1182,10 @@ abilities: [
     onShoot: true
   }
 ]
+
+research: {
+  parent: flare
+  objectives: [
+    buff-additive-reconstructor
+  ]
+}
