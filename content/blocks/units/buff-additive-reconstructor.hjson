@@ -20,11 +20,12 @@ requirements: [
   copper/200
   lead/120
   silicon/90
+  unstable-concept/100
 ]
 research: {
   parent: additive-reconstructor
   objectives: [
-    naval-factory
+    tetrative-reconstructor
   ]
 }
 category: units

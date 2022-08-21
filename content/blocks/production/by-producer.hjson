@@ -1,0 +1,57 @@
+type: GenericCrafter
+size: 3
+hasLiquids: true
+itemCapacity: 30
+craftTime: 132
+consumes: {
+  power: 6
+  items: {
+    items: [
+      metaglass/5
+      scrap/8
+    ]
+  }
+  liquid: {
+    liquid: slag
+    amount: 0.12
+  }
+}
+outputItem: unstable-concept/7
+requirements: [
+  titanium/110
+  silicon/160
+  thorium/90
+  graphite/90
+]
+research: {
+  parent: disassembler
+  objectives: [
+    unstable-concept
+  ]
+}
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+    {
+      type: DrawLiquidRegion
+      drawLiquid: slag
+    }
+    {
+      type: DrawDefault
+    }
+    {
+      type: DrawRegion
+      suffix: -spinner
+      rotateSpeed: 2
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+    }
+  ]
+}
+category: crafting

@@ -1,0 +1,32 @@
+type: missile
+template: MissileUnitType
+//
+trailLength: -1
+drawCell: false
+engineSize: 0
+deathExplosionEffect: none
+deathSound: none
+//
+speed: 8
+rotateSpeed: 0
+lifetime: 10
+hitSize: 0.1
+crashDamageMultiplier: 0
+abilities: [
+  {
+    type: StatusFieldAbility
+    effect: {
+      name: death
+      show: false
+      damage: 300
+    }
+    duration: 1
+    reload: 1.2
+    range: 11
+    activeEffect: none
+  }
+]
+
+immunities: [
+  hmm-death
+]

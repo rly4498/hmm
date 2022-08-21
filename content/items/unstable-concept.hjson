@@ -1,0 +1,9 @@
+cost: 1.1
+hardness: 1.1
+explosiveness: 1.2
+flammability: -1.4
+radioactivity: -1
+charge: 0.75
+
+frames: 20
+frameTime: 6

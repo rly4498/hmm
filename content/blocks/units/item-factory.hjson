@@ -1,0 +1,25 @@
+type: UnitFactory
+consumes: {
+  power: 5
+}
+plans: [
+  {
+    unit: beryllius
+    time: 3600
+    requirements: [
+     beryllium/1
+     unstable-concept/5
+    ]
+  }
+]
+requirements: [
+  copper/3
+  unstable-concept/100
+]
+research: {
+  parent: ground-factory
+  objectives: [
+    naval-factory
+  ]
+}
+category: units

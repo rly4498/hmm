@@ -1,0 +1,420 @@
+type: mech
+speed: 0.7
+rotateSpeed: 7
+strafePenalty: 1
+health: 100
+
+outlines: false
+drawCell: false
+createScorch: false
+shadowElevationScl: 0.0001
+mechSideSway: 0.2
+mechFrontSway: 0.05
+parts: [
+  {
+    type: RegionPart
+    suffix: -knife
+    layerOffset: -0.0002
+    //
+    moves: [
+      {
+        progress: {
+          type: warmup
+          op: mul
+          other: {
+            type: reload
+            op: inv
+          }
+        }
+         x: 6
+         y: -1
+         rot: -210
+      }
+      {
+        progress: {
+          type: heat
+          op: curve
+          interp: pow5Out
+        }
+        x: 1.5
+        y: 1.5
+        rot: -15
+      }
+    ]
+    x: -2
+    y: 2
+    rotation: 165
+  }
+  {
+    type: RegionPart
+    suffix: -knife-gradient
+    outline: false
+    layerOffset: -0.0001
+    //
+    progress: {
+      type: warmup
+      op: mul
+      other: {
+        type: reload
+        op: inv
+      }
+    }
+    moves: [
+      {
+        progress: {
+          type: warmup
+          op: mul
+          other: {
+            type: reload
+            op: inv
+          }
+        }
+         x: 6
+         y: -1
+         rot: -210
+      }
+      {
+        progress: {
+          type: heat
+          op: curve
+          interp: pow5Out
+        }
+        x: 1.5
+        y: 1.5
+        rot: -15
+      }
+    ]
+    color: 1d1d2300
+    colorTo: 1d1d23
+    x: -2
+    y: 2
+    rotation: 165
+  }
+  {
+    type: RegionPart
+    suffix: -gradient
+    outline: false
+    layerOffset: 0.0001
+    //
+    progress: {
+      type: warmup
+      op: mul
+      other: {
+        type: reload
+        op: inv
+      }
+    }
+    color: 1d1d2300
+    colorTo: 1d1d23
+  }
+]
+weapons: [
+  {
+    name: main-weapon
+    mirror: false
+    x: 0
+    y: 0
+    rotate: true
+
+    minWarmup: 0.98
+    shootWarmupSpeed: 0.035
+    shootCone: 32
+    reload: 2700
+    cooldownTime: 90
+    shootStatus: {
+      name: slowdown
+      show: false
+      speedMultiplier: 0.1
+      dragMultiplier: 0.4
+    }
+    shootStatusDuration: 60
+    bullet: {
+      type: LaserBulletType
+      buildingDamageMultiplier: 0
+      damage: 0
+      lifetime: 50
+      recoil: -14
+      largeHit: true
+      lengthFalloff: 0
+      length: 65
+      width: 0
+      laserEffect: none
+      smokeEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            layer: 61
+            particles: 9
+            lifetime: 28
+            startDelay: 52
+            line: true
+            length: 120
+            strokeFrom: 1.8
+            strokeTo: 0.8
+            lenFrom: 12
+            lenTo: 3
+            cone: 16
+            baseRotation: 180
+            offsetX: -116
+            colorFrom: ffffff
+            colorTo: ffffff00
+            interp: pow5Out
+            sizeInterp: fastSlow
+          }
+        ]
+      }
+      status: {
+        name: slow2
+        speedMultiplier: 0.4
+        dragMultiplier: 1
+        damageMultiplier: 0
+        show: false
+      }
+      statusDuration: 60
+
+      fragRandomSpread: 0
+      fragBullets: 1
+      fragVelocityMin: 1
+      fragVelocityMax: 1
+      fragBullet: {
+        type: ShrapnelBulletType
+        buildingDamageMultiplier: 0
+        damage: 300
+        lifetime: 18
+        length: 60
+        width: 25
+        serrations: 0
+        pierceArmor: true
+        hitLarge: true
+      }
+
+      shootEffect: {
+        type: SeqEffect
+        layer: 59.9999
+        lifetime: 240
+        followParent: false
+
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 1
+            lifetime: 10
+            region: hmm-kill-background-but-squished
+            sizeFrom: 75
+            sizeTo: 75
+            baseLength: 45
+            length: 0
+            cone: 0
+            offset: 50
+          }
+          {
+            type: ParticleEffect
+            particles: 1
+            lifetime: 8
+            region: hmm-kill-background-but-squished
+            sizeFrom: 80
+            sizeTo: 80
+            baseLength: 55
+            length: 0
+            cone: 0
+            offset: -30
+          }
+          {
+            type: ParticleEffect
+            particles: 1
+            lifetime: 60
+            region: hmm-kill-background
+            sizeFrom: 70
+            sizeTo: 70
+            baseLength: 40
+            randLength: false
+            length: 0
+            cone: 0
+          }
+          {
+            type: ParticleEffect
+            particles: 1
+            lifetime: 10
+            region: hmm-kill-background
+            sizeFrom: 70
+            sizeTo: 66
+            baseLength: 40
+            randLength: false
+            length: 0
+            cone: 0
+            colorTo: ffffff00
+          }
+        ]
+      }
+    }
+    parts: [
+      {
+        type: RegionPart
+        suffix: -attack-indicator
+        layerOffset: 0.0001
+        outline: false
+        color: ffffff00
+        colorTo: f15454
+        y: 8
+        rotation: 45
+        progress: {
+          type: warmup
+          op: mul
+          other: {
+            type: reload
+            op: inv
+          }
+        }
+      }
+    ]
+  }
+]
+deathExplosionEffect: {
+  type: MultiEffect
+  effects: [
+    {
+      type: SeqEffect
+      layer: 19.9999
+      lifetime: 3720
+
+      effects: [
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 3600
+          region: circle-shadow
+          colorFrom: 0000004d
+          colorTo: 0000004d
+          randLength: false
+          sizeFrom: 6.5
+          sizeTo: 6.5
+          length: 0
+        }
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 24
+          region: circle-shadow
+          colorFrom: 0000004d
+          colorTo: 00000000
+          randLength: false
+          sizeFrom: 6.5
+          sizeTo: 6.5
+          length: 0
+        }
+      ]
+    }
+    {
+      type: SeqEffect
+      layer: 20.1
+      lifetime: 3720
+
+      effects: [
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 6
+          region: hmm-beryllius-dead1
+          sizeFrom: 5
+          sizeTo: 5
+          cone: 0
+          randLength: false
+          length: 0
+        }
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 16
+          region: hmm-beryllius-dead2
+          sizeFrom: 5
+          sizeTo: 5
+          cone: 0
+          randLength: false
+          length: 0
+        }
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 8
+          region: hmm-beryllius-dead3
+          sizeFrom: 5
+          sizeTo: 5
+          cone: 0
+          randLength: false
+          length: 0
+        }
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 6
+          region: hmm-beryllius-dead4
+          sizeFrom: 5
+          sizeTo: 5
+          cone: 0
+          randLength: false
+          length: 0
+        }
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 6
+          region: hmm-beryllius-dead5
+          sizeFrom: 5
+          sizeTo: 5
+          cone: 0
+          randLength: false
+          length: 0
+        }
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 6
+          region: hmm-beryllius-dead6
+          sizeFrom: 5
+          sizeTo: 5
+          cone: 0
+          randLength: false
+          length: 0
+        }
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 10
+          region: hmm-beryllius-dead7
+          sizeFrom: 5
+          sizeTo: 5
+          cone: 0
+          randLength: false
+          length: 0
+        }
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 3600
+          region: hmm-beryllius-dead8
+          sizeFrom: 5
+          sizeTo: 5
+          cone: 0
+          randLength: false
+          length: 0
+        }
+        {
+          type: ParticleEffect
+          particles: 1
+          lifetime: 24
+          region: hmm-beryllius-dead8
+          sizeFrom: 5
+          sizeTo: 5
+          cone: 0
+          randLength: false
+          length: 0
+          colorTo: ffffff00
+        }
+      ]
+    }
+  ]
+}
+immunities: [
+  hmm-death
+]

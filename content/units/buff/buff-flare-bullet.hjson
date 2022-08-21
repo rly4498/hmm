@@ -1,0 +1,15 @@
+type: missile
+template: MissileUnitType
+//
+drawCell: false
+trailLength: -1
+engineSize: 0
+deathExplosionEffect: none
+deathSound: none
+//
+speed: 0
+lifetime: 16
+rotateSpeed: 0
+hitSize: 14
+range: 32
+crashDamageMultiplier: 0
