@@ -22,7 +22,7 @@ abilities: [
     }
     duration: 1
     reload: 1.2
-    range: 11.5
+    range: 12.2
     activeEffect: none
   }
 ]
